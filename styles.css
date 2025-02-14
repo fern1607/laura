@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0a0a23; /* Fondo de cielo oscuro */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+/* Tallo */
+.stem {
+    position: absolute;
+    width: 8px;
+    height: 200px;
+    background: linear-gradient(to bottom, #8B4513, #654321); /* Café oscuro */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    animation: growStem 2s forwards;
+}
+
+@keyframes growStem {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 200px;
+    }
+}
+
+/* Hoja */
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(50, 205, 50, 0.8), rgba(34, 139, 34, 0.8)); /* Verde transparente */
+    border-radius: 50%;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    z-index: 2;
+    animation: growLeaf 2s forwards 2s;
+    opacity: 0;
+}
+
+@keyframes growLeaf {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) rotate(-45deg) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) rotate(-45deg) scale(1);
+    }
+}
+
+/* Flor */
+.flower {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bloom 3s forwards 2s;
+    opacity: 0;
+}
+
+@keyframes bloom {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* Pétalos */
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background: linear-gradient(to bottom, #FF69B4, #FF1493); /* Rosado brillante */
+    border-radius: 50%;
+    transform-origin: bottom center;
+    opacity: 0.9; /* Ligera transparencia */
+}
+
+.p1 {
+    transform: rotate(0deg) translateY(-40px);
+}
+.p2 {
+    transform: rotate(90deg) translateY(-40px);
+}
+.p3 {
+    transform: rotate(180deg) translateY(-40px);
+}
+.p4 {
+    transform: rotate(270deg) translateY(-40px);
+}
+
+/* Mensaje */
+.message {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: #FFFFFF; /* Texto blanco */
+    opacity: 0;
+    animation: fadeIn 2s forwards 5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
